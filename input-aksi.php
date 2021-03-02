@@ -8,7 +8,21 @@ $confrankert = $_POST['confrankert'];
 $penerima = $_POST['penerima'];
 $keterangan = $_POST['keterangan'];
 
-mysqli_query($conn, "INSERT INTO nota_rekapan VALUES('','$sp','$colli','$berat','$franko','$confrankert','$penerima','$keterangan')");
+$tambahdata = mysqli_query($conn, "INSERT INTO nota_rekapan VALUES('','$sp','$colli','$berat','$franko','$confrankert','$penerima','$keterangan')");
 
-header("location:tables.php?pesan=input");
+if(!$tambahdata){
+    echo "
+        <script>
+            alert('Data Gagal Ditambahkan');
+            document.location.href = 'tables.php';
+        </script>
+        ";
+} else{
+    echo "
+        <script>
+            alert('Data Berhasil Ditambahkan');
+            document.location.href = 'tables.php';
+        </script>
+    ";
+}
 ?>

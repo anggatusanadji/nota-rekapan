@@ -10,6 +10,20 @@ $confrankert = $_POST['confrankert'];
 $penerima = $_POST['penerima'];
 $keterangan = $_POST['keterangan'];
     
-$query = mysqli_query($conn, "UPDATE nota_rekapan SET sp='$sp', colli='$colli', berat='$berat', franko='$franko', confrankert='$confrankert', penerima='$penerima', keterangan='$keterangan' WHERE id='$id'");
-header("location:tables.php");
+$updatedata = mysqli_query($conn, "UPDATE nota_rekapan SET sp='$sp', colli='$colli', berat='$berat', franko='$franko', confrankert='$confrankert', penerima='$penerima', keterangan='$keterangan' WHERE id='$id'");
+if(!$updatedata){
+    echo "
+        <script>
+            alert('Data Gagal Diupdate');
+            document.location.href = 'tables.php';
+        </script>
+        ";
+} else{
+    echo "
+        <script>
+            alert('Data Berhasil Diupdate');
+            document.location.href = 'tables.php';
+        </script>
+    ";
+}
 ?>

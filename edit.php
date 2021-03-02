@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -185,8 +185,8 @@
                                 <div class="form-group">
                                     <label class="text-dark" for="franko">Franko</label>
                                     <select class="form-control" type="text" name="franko" id="franko" >
-                                        <option>True</option>
-                                        <option>False</option>
+                                        <option <?=$data['franko'] == "True" ? "selected" : ""?> >True</option>
+                                        <option <?=$data['franko'] == "False" ? "selected" : ""?> >False</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

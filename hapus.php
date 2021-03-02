@@ -1,7 +1,22 @@
 <?php
 include 'koneksi.php';
 $id = $_GET['id'];
-mysqli_query($conn, "DELETE FROM nota_rekapan WHERE id='$id'")or die(mysql_error());
+
+$hapusdata = mysqli_query($conn, "DELETE FROM nota_rekapan WHERE id='$id'")or die(mysql_error());
  
-header("location:tables.php?pesan=hapus");
+if(!$hapusdata){
+    echo "
+        <script>
+            alert('Data Gagal Dihapus');
+            document.location.href = 'tables.php';
+        </script>
+        ";
+} else{
+    echo "
+        <script>
+            alert('Data Berhasil Dihapus');
+            document.location.href = 'tables.php';
+        </script>
+    ";
+}
 ?>

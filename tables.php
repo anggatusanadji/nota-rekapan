@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -203,7 +203,8 @@
                                             <td><?php echo $data['keterangan']; ?></td>
                                             <td>
                                                 <a class="edit btn btn-warning" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> 
-                                                <a class="hapus btn btn-danger" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+                                                <a class="hapus btn btn-danger" href="hapus.php?id=<?php echo $data['id']; ?>" onclick="
+                return confirm('Yakin Untuk Menghapus Data ini?')">Hapus</a>					
                                             </td>
                                         </tr>
                                         <?php } ?>
